@@ -29,6 +29,10 @@ gem 'coffee-rails', '~> 4.2'
 
 gem 'webpacker', '~> 4.2', '>= 4.2.2'
 
+gem 'bootstrap', '~> 4.4', '>= 4.4.1'
+
+gem 'devise'
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
