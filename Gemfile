@@ -27,6 +27,8 @@ gem 'coffee-rails', '~> 4.2'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+gem "aws-sdk-s3", require: false
+
 gem 'webpacker', '~> 4.2', '>= 4.2.2'
 
 gem 'bootstrap', '~> 4.4', '>= 4.4.1'
