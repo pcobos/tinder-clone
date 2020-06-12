@@ -29,6 +29,8 @@ gem 'coffee-rails', '~> 4.2'
 
 gem "aws-sdk-s3", require: false
 
+gem 'figaro', '~> 1.2'
+
 gem 'webpacker', '~> 4.2', '>= 4.2.2'
 
 gem 'bootstrap', '~> 4.4', '>= 4.4.1'
