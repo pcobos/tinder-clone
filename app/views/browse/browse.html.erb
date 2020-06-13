@@ -1,8 +1,9 @@
 <ul id="slides">
-  <% @users.each_with_index do |user| %>
-  <div class="slide" data-id="<%= user.id %>">
-    <li><%= user.first_name %></li>
-  </div>
+  <% @users.each_with_index do |user, i| %>
+  <li class="slide" <%= 'showing' if i == 0 %> data-id="<%= user.id %>">
+    <%= image_tag user.images.first, width: "200px" %>
+    <%= user.first_name %>
+  </li>
   <% end %>
 </ul>
 
