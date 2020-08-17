@@ -18,13 +18,23 @@
   font-size: 40px;
   padding: 40px;
   box-sizing: border-box;
-  background: #333;
+  // background: #333;
   color: #fff;
 
   -webkit-transition: opacity 1s;
   -moz-transition: opacity 1s;
   -o-transition: opacity 1s;
   transition: opacity 1s;
+}
+
+.user-details {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  width: 200px;
+  text-shadow: 2px 2px 4px black;
+  margin-left: -100px;
+  text-align: center;
 }
 
 .showing {
@@ -44,8 +54,8 @@
 
 .image-carousel {
   width: 300px;
-  height: 400px;
-  margin: -8px auto;
+  height: 350px;
+  margin: auto;
   background-repeat: no-repeat;
   background-size: cover;
 }
