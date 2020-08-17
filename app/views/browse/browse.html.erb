@@ -4,7 +4,11 @@
     
     <div class="image-carousel" style="background-image: url('<%= url_for user.images.first %>')">
     </div>
-   <span class="user-details"><%= user.first_name %></span>
+    <div class="user-details">
+      <span class="user-name"><%= user.first_name %></span><br>
+      <i class="fa fa-graduation-cap mr-1"></i><span> Education / Job</span><br>
+      <i class="fa fa-map-marker mr-3"></i><span> Location</span>
+    </div>
   </li>
   <% end %>
 </ul>
