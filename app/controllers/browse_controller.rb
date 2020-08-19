@@ -5,20 +5,19 @@ def browse
 end
 
 def approve
-  #user swipes right
   account_id = params[:id]
-  # logger.debug "User id for matching is #{params[:id]}"
-  # First we create a new like, this requires the liked user's id
+  #user swipes right
+
+  # Create like for user
+  # Create new like, with liked user's id(required)
   new_like = Like.new(liked_account_id: account_id)
-  # assign the new like account id as the current user id, remember that the like class belongs to account class
+  # assign new_like's account_id as the current user id, Like class belongs to Account class
   new_like.account_id = current_account.id
-  # Next comes a conditional for displaying a message in case the liked_user also liked us back
+  # Next, conditional for checking if they liked us back and displaying message
   if new_like.save
-    # If saved, look for said id and check if they have liked our id (why are we using count method?)
+    # If saved, verify if liked_account_id liked our id (why are we using count method?)
     existing_like = Like.where(account_id: account_id, liked_account_id: current_account.id).count 
-
-  else
-
+    @they_like_us = existing_like > 0
   end
 end
 
