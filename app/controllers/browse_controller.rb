@@ -14,8 +14,9 @@ def approve
   new_like.account_id = current_account.id
   # Next comes a conditional for displaying a message in case the liked_user also liked us back
   if new_like.save
-    # If saved, look for said id and check if they have liked our id
-    existing_like = Like.where(account_id: account_id, liked_account_id: current_account.id).count
+    # If saved, look for said id and check if they have liked our id (why are we using count method?)
+    existing_like = Like.where(account_id: account_id, liked_account_id: current_account.id).count 
+
   else
 
   end
