@@ -2,7 +2,12 @@ class BrowseController < ApplicationController
   skip_before_action :verify_authenticity_token
 
 def browse
-  @users = Account.where.not(id: current_account.id)
+  # Finding users current account has already liked
+  liked_account_ids = Like.where(account_id: current_account.id).map(&:liked_account_id)
+  # Pushing current_account id to the array storing liked users' id
+  liked_account_ids << current_account.id
+  # Loading accounts that are not included in the liked_account_ids list
+  @users = Account.where.not(id: liked_account_ids)
 end
 
 def approve
