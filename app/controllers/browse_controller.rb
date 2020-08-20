@@ -1,4 +1,5 @@
 class BrowseController < ApplicationController
+  skip_before_action :verify_authenticity_token
 
 def browse
   @users = Account.where.not(id: current_account.id)
