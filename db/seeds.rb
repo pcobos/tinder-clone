@@ -9,6 +9,10 @@ puts "> Creating users..."
 
 # FILE = File.open('app/assets/images/portrait.jpg')
 
+# url = Faker::Avatar.image(slug: 'my-own-slug', size: '250x250')
+# filename = File.basename(URI.parse(url).path)
+# file = URI.open(url)
+
 15.times do 
   Account.create(
     first_name: Faker::Name.first_name,
@@ -18,6 +22,7 @@ puts "> Creating users..."
     password: "123456",
   )
   # account.images.attach(io: FILE, filename: 'person.jpg', content_type: 'image/jpg')
+  # account.images.attach(io: file, filename: filename)
 end
 
 puts "> Done!"
