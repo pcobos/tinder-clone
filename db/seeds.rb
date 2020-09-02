@@ -14,7 +14,7 @@ puts "> Creating users..."
 # file = URI.open(url)
 
 15.times do 
-  Account.create(
+  account = Account.create(
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
     username: Faker::Games::Witcher.monster,

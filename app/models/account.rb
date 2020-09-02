@@ -10,12 +10,15 @@ class Account < ApplicationRecord
 
   def matches
 
+    #Users (ids) I liked
     liked_account_ids = Like.where(account_id: self.id).map(&:liked_account_ids)
     puts liked_account_ids
 
+    # Users that liked me
     likes_me_account_ids = Like.where(liked_account_ids: self.id).map(&:account_id)
     puts likes_me_account_ids
 
+    # Matches
     matched_ids = liked_account_ids.select{ |id|  likes_me_account_ids.include?(id)}
     puts matched_ids
 
